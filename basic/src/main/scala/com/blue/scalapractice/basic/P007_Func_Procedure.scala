@@ -22,6 +22,9 @@ object P007_Func {
     // 5 从第一个值开始覆盖
     println(calc.sum3(1))
 
+    println("=============")
+    otherFuncs
+
     /**
      * 方法里面可以再定义方法，与其他方法平级，当前没有调用不会被执行
      */
@@ -33,6 +36,27 @@ object P007_Func {
       }
     }
 
+  }
+
+  def otherFuncs(): Unit = {
+    val res = (0 to 3).reverse
+    //foreach ==> f: Int => U
+    //传入一个函数，入参为Int，返回值为Unit
+    res.foreach(println)
+
+    println("===========")
+    //也可以传入自定义函数
+    res.foreach(myPrint)
+
+    println("===========")
+    var num = ""
+    //_代表每次迭代的那个值
+    "hello".foreach(num += _.toUpper)
+    println(num)
+  }
+
+  def myPrint(x: Int): Unit = {
+    printf("%d\t", x)
   }
 
   def ff(): Unit = { //编译为ff
